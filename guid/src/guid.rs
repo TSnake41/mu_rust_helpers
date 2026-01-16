@@ -1,4 +1,4 @@
-#![cfg_attr(target_os = "uefi", no_std)]
+#![cfg_attr(not(test), no_std)]
 
 use r_efi::efi;
 pub use uuid::uuid;
@@ -83,3 +83,4 @@ mod tests {
         assert_ne!(guid_to_uuid!(guid!("434F695C-EF26-4A12-9EBA-DDEF0097497C")), uuid!(ZERO_GUID_STR));
     }
 }
+
